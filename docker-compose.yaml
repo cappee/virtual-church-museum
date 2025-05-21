@@ -1,0 +1,32 @@
+services:
+  vue:
+    build: ./frontend
+    container_name: vue
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./frontend:/app
+    command: npm run dev
+    depends_on:
+      - php
+
+  php:
+    build: ./backend
+    container_name: php
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./backend:/var/www/html
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - '11434:11434'
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:
