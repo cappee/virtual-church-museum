@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="container" style="margin-top: 2rem">
     <article v-if="opera">
       <header>
         <h1>{{ opera.title }}</h1>
@@ -30,12 +30,13 @@ onMounted(async () => {
 
   const worksNodes = [...xmlDoc.getElementsByTagName('work')]
   for (const node of worksNodes) {
-    const title = node.getElementsByTagName('title')[0]?.textContent || ''
-    if (title === route.params.id) {
+    const id = node.getElementsByTagName('id')[0]?.textContent || ''
+    if (id === route.params.id) {
+      const title = node.getElementsByTagName('title')[0]?.textContent || ''
       const coord = node.getElementsByTagName('coord')[0]
       const yaw = parseFloat(coord?.getElementsByTagName('yaw')[0]?.textContent || 0)
       const pitch = parseFloat(coord?.getElementsByTagName('pitch')[0]?.textContent || 0)
-      opera.value = { title, yaw, pitch }
+      opera.value = { title: title, yaw, pitch }
       break
     }
   }

@@ -24,6 +24,7 @@
     </coord>
   </work>-->
   <work>
+    <id>viacrucis1</id>
     <title>Via Crucis I</title>
     <coord>
         <yaw>6.07</yaw>
@@ -31,6 +32,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis2</id>
     <title>Via Crucis II</title>
     <coord>
         <yaw>5.83</yaw>
@@ -38,6 +40,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis3</id>
     <title>Via Crucis III</title>
     <coord>
         <yaw>5.43</yaw>
@@ -45,6 +48,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis4</id>
     <title>Via Crucis IV</title>
     <coord>
         <yaw>5.09</yaw>
@@ -52,6 +56,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis5</id>
     <title>Via Crucis V</title>
     <coord>
         <yaw>4.81</yaw>
@@ -59,6 +64,7 @@
     </coord>
   </work>
 	<work>
+    <id>viacrucis6</id>
     <title>Via Crucis VI</title>
     <coord>
         <yaw>4.60</yaw>
@@ -66,6 +72,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis7</id>
     <title>Via Crucis VII</title>
     <coord>
         <yaw>4.10</yaw>
@@ -73,6 +80,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis8</id>
     <title>Via Crucis VIII</title>
     <coord>
         <yaw>3.58</yaw>
@@ -80,6 +88,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis9</id>
     <title>Via Crucis IX</title>
     <coord>
         <yaw>3.08</yaw>
@@ -87,6 +96,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis10</id>
     <title>Via Crucis X</title>
     <coord>
         <yaw>2.85</yaw>
@@ -94,6 +104,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis11</id>
     <title>Via Crucis XI</title>
     <coord>
         <yaw>2.59</yaw>
@@ -101,6 +112,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis12</id>
     <title>Via Crucis XII</title>
     <coord>
         <yaw>2.22</yaw>
@@ -108,6 +120,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis13</id>
     <title>Via Crucis XIII</title>
     <coord>
         <yaw>1.82</yaw>
@@ -115,6 +128,7 @@
     </coord>
   </work>
   <work>
+    <id>viacrucis14</id>
     <title>Via Crucis XIV</title>
     <coord>
         <yaw>1.57</yaw>

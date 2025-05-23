@@ -2,30 +2,42 @@
   <div ref="panoramaViewer" class="viewer"></div>
 </template>
 
-<script setup>
-import { onMounted, ref } from 'vue'
+<script setup lang="ts">
+import { onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { Viewer } from '@photo-sphere-viewer/core'
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin'
 import '@photo-sphere-viewer/core/index.css'
 import '@photo-sphere-viewer/markers-plugin/index.css'
-import coffee from '@/assets/skybox_cropped.jpg'
+import interior from '@/assets/skybox_interior.jpg'
+import coffee from '@/assets/coffee.jpg'
 import painting from '@/assets/google_maps_pin_PNG76.png'
 
 const router = useRouter()
 const panoramaViewer = ref(null)
 
+const props = defineProps<{
+  photo: 'interior' | 'exterior'
+}>()
+
+let viewer: Viewer | null = null
+
+const photoMap = {
+  interior: interior,
+  exterior: coffee,
+}
+
 onMounted(async () => {
-  const viewer = new Viewer({
-    container: panoramaViewer.value,
-    panorama: coffee,
+  viewer = new Viewer({
+    container: panoramaViewer.value!,
+    panorama: photoMap[props.photo],
     navbar: false,
     mousewheel: false,
     touchmoveTwoFingers: true,
     plugins: [MarkersPlugin],
   })
 
-  const markersPlugin = viewer.getPlugin(MarkersPlugin)
+  const markersPlugin = viewer.getPlugin(MarkersPlugin) as MarkersPlugin
 
   fetch('http://localhost:8000/api/works.php')
     .then((res) => res.text())
@@ -36,15 +48,16 @@ onMounted(async () => {
       const works = [...xmlDoc.getElementsByTagName('work')]
 
       for (const work of works) {
+        const id = work.getElementsByTagName('id')[0]?.textContent
         const title = work.getElementsByTagName('title')[0]?.textContent
         const coord = work.getElementsByTagName('coord')[0]
-        const yaw = parseFloat(coord.getElementsByTagName('yaw')[0]?.textContent)
-        const pitch = parseFloat(coord.getElementsByTagName('pitch')[0]?.textContent)
+        const yaw = parseFloat(coord.getElementsByTagName('yaw')[0]?.textContent!)
+        const pitch = parseFloat(coord.getElementsByTagName('pitch')[0]?.textContent!)
 
         markersPlugin.addMarker({
-          id: `${title}`,
+          id: `${id}`,
           position: { yaw, pitch },
-          tooltip: title,
+          tooltip: title!,
           image: painting,
           size: { width: 32, height: 32 },
           anchor: 'bottom center',
@@ -68,6 +81,15 @@ onMounted(async () => {
     router.push(`/opera/${encodeURIComponent(marker.id)}`)
   })
 })
+
+watch(
+  () => props.photo,
+  (newPhoto) => {
+    if (viewer) {
+      viewer.setPanorama(photoMap[newPhoto])
+    }
+  },
+)
 </script>
 
 <style scoped>

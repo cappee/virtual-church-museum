@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import PanoramaViewer from '@/components/PanoramaViewer.vue'
+
+defineProps<{
+  photo: 'interior' | 'exterior'
+}>()
 </script>
 
 <template>
   <main class="panorama">
-    <PanoramaViewer />
+    <PanoramaViewer :photo="photo" />
   </main>
 </template>
 
