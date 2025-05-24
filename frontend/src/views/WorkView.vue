@@ -6,6 +6,9 @@
       </header>
       <p><strong>Yaw:</strong> {{ opera.yaw }}</p>
       <p><strong>Pitch:</strong> {{ opera.pitch }}</p>
+      <p><strong>Descrizione:</strong> {{ opera.description }}</p>
+      <p><strong>Location:</strong> {{ opera.location }}</p>
+      <p><strong>Anno:</strong> {{ opera.year }}</p>
       <footer>
         <a href="/" role="button">Torna alla mappa</a>
       </footer>
@@ -39,7 +42,7 @@ onMounted(async () => {
       const coord = node.getElementsByTagName('coord')[0]
       const yaw = parseFloat(coord?.getElementsByTagName('yaw')[0]?.textContent || 0)
       const pitch = parseFloat(coord?.getElementsByTagName('pitch')[0]?.textContent || 0)
-      opera.value = { title: title, yaw, pitch }
+      opera.value = { title: title, yaw, pitch, description, location, year }
       break
     }
   }
