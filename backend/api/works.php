@@ -18,8 +18,12 @@ switch ($action) {
             $works[] = [
                 'id' => (string) $work->id,
                 //'image' => (string) "http://localhost:8000/data/photos/" . (string) $work->id,
-                'image' => (string) "http://localhost:8000/data/photos/monalisa.png",
+                //'image' => (string) "http://localhost:8000/data/photos/monalisa.png",
+                'image' => "http://localhost:8000/data/photos/" . (string) $work->id . ".jpeg",
                 'title' => (string) $work->title,
+                'description' => isset($work->description) ? (string) $work->description : null,
+                'year' => (int) $work->year,
+                'location' => (string) $work->location,
                 'yaw' => (float) $work->coord->yaw,
                 'pitch' => (float) $work->coord->pitch,
             ];

@@ -25,7 +25,9 @@
   </work>-->
   <work>
     <id>viacrucis1</id>
-    <title>Via Crucis I</title>
+    <title>Gesù è condannato a morte</title>
+    <description>Gesù, innocente, viene condannato da Pilato. Scena di ingiustizia e accettazione della volontà di Dio.</description>
+    <location>interior</location>
     <coord>
         <yaw>6.07</yaw>
         <pitch>0.15</pitch>
@@ -33,7 +35,9 @@
   </work>
   <work>
     <id>viacrucis2</id>
-    <title>Via Crucis II</title>
+    <title>Gesù prende la croce</title>
+    <description>Gesù accetta la croce con obbedienza e amore, caricandosi il peso dell’umanità.</description>
+    <location>interior</location>
     <coord>
         <yaw>5.83</yaw>
         <pitch>0.16</pitch>
@@ -41,7 +45,9 @@
   </work>
   <work>
     <id>viacrucis3</id>
-    <title>Via Crucis III</title>
+    <title>Gesù cade per la prima volta</title>
+    <description>Gesù cade sotto il peso della croce: simbolo della debolezza umana e della forza nel rialzarsi.</description>
+    <location>interior</location>
     <coord>
         <yaw>5.43</yaw>
         <pitch>0.19</pitch>
@@ -49,7 +55,9 @@
   </work>
   <work>
     <id>viacrucis4</id>
-    <title>Via Crucis IV</title>
+    <title>Gesù incontra sua madre</title>
+    <description>Maria e Gesù si incontrano con sguardi pieni di dolore e amore, nel cuore della Passione.</description>
+    <location>interior</location>
     <coord>
         <yaw>5.09</yaw>
         <pitch>0.17</pitch>
@@ -57,7 +65,9 @@
   </work>
   <work>
     <id>viacrucis5</id>
-    <title>Via Crucis V</title>
+    <title>Simone di Cirene aiuta Gesù a portare la croce</title>
+    <description>Un uomo comune, costretto ad aiutare, diventa partecipe del sacrificio di Cristo.</description>
+    <location>interior</location>
     <coord>
         <yaw>4.81</yaw>
         <pitch>0.14</pitch>
@@ -65,7 +75,9 @@
   </work>
 	<work>
     <id>viacrucis6</id>
-    <title>Via Crucis VI</title>
+    <title>Veronica asciuga il volto di Gesù</title>
+    <description>Con un gesto di pietà, Veronica riceve in dono l’immagine del volto di Cristo.</description>
+    <location>interior</location>
     <coord>
         <yaw>4.60</yaw>
         <pitch>0.11</pitch>
@@ -73,7 +85,9 @@
   </work>
   <work>
     <id>viacrucis7</id>
-    <title>Via Crucis VII</title>
+    <title>Gesù cade per la seconda volta</title>
+    <description>La fatica cresce, ma Gesù continua a portare la croce. Simbolo di perseveranza nella prova.</description>
+    <location>interior</location>
     <coord>
         <yaw>4.10</yaw>
         <pitch>0.16</pitch>
@@ -81,7 +95,9 @@
   </work>
   <work>
     <id>viacrucis8</id>
-    <title>Via Crucis VIII</title>
+    <title>Gesù consola le donne di Gerusalemme</title>
+    <description>Gesù, sofferente, pensa agli altri e invita alla conversione e al pentimento.</description>
+    <location>interior</location>
     <coord>
         <yaw>3.58</yaw>
         <pitch>0.14</pitch>
@@ -89,7 +105,9 @@
   </work>
   <work>
     <id>viacrucis9</id>
-    <title>Via Crucis IX</title>
+    <title>Gesù cade per la terza volta</title>
+    <description>Gesù cade ancora, stremato, ma continua. Incoraggiamento a non arrendersi mai.</description>
+    <location>interior</location>
     <coord>
         <yaw>3.08</yaw>
         <pitch>0.14</pitch>
@@ -97,7 +115,9 @@
   </work>
   <work>
     <id>viacrucis10</id>
-    <title>Via Crucis X</title>
+    <title>Gesù è spogliato delle vesti</title>
+    <description>I soldati lo spogliano: massima umiliazione, ma anche totale offerta di sé.</description>
+    <location>interior</location>
     <coord>
         <yaw>2.85</yaw>
         <pitch>0.18</pitch>
@@ -105,7 +125,9 @@
   </work>
   <work>
     <id>viacrucis11</id>
-    <title>Via Crucis XI</title>
+    <title>Gesù è inchiodato alla croce</title>
+    <description>Le mani e i piedi di Cristo trafitti: l’amore resiste nel dolore più estremo.</description>
+    <location>interior</location>
     <coord>
         <yaw>2.59</yaw>
         <pitch>0.21</pitch>
@@ -113,7 +135,9 @@
   </work>
   <work>
     <id>viacrucis12</id>
-    <title>Via Crucis XII</title>
+    <title>Gesù muore sulla croce</title>
+    <description>Il momento centrale: la morte che dona la vita. Gesù perdona e si affida al Padre.</description>
+    <location>interior</location>
     <coord>
         <yaw>2.22</yaw>
         <pitch>0.22</pitch>
@@ -121,7 +145,9 @@
   </work>
   <work>
     <id>viacrucis13</id>
-    <title>Via Crucis XIII</title>
+    <title>Gesù è deposto dalla croce</title>
+    <description>Il corpo di Gesù viene accolto con amore e dolore. Maria riceve il Figlio morto.</description>
+    <location>interior</location>
     <coord>
         <yaw>1.82</yaw>
         <pitch>0.17</pitch>
@@ -129,10 +155,51 @@
   </work>
   <work>
     <id>viacrucis14</id>
-    <title>Via Crucis XIV</title>
+    <title>Gesù è deposto nel sepolcro</title>
+    <description>Gesù viene sepolto, ma la speranza non è perduta: è l’attesa della Risurrezione.</description>
+    <location>interior</location>
     <coord>
         <yaw>1.57</yaw>
         <pitch>0.15</pitch>
+    </coord>
+  </work>
+  <work>
+    <id>lastramarmo</id>
+    <title>Leggio</title>
+    <year>1191</year>
+    <description>è inserita un'epigrafe che reca l'antico "titolo" della chiesa: «	TIT. S. IOANNIS ANTE PORIAM LA[tinam]. »</description>
+    <location>interior</location>
+    <coord>
+        <yaw>0.30</yaw>
+        <pitch>-0.15</pitch>
+    </coord>
+  </work>
+  <work>
+    <id>affresco1</id>
+    <title>Storie della Genesi e Giudizio Universale</title>
+    <year>1191</year>
+    <location>interior</location>
+    <coord>
+        <yaw>3.84</yaw>
+        <pitch>0.48</pitch>
+    </coord>
+  </work>
+  <work>
+    <id>cuspide</id>
+    <title>Cuspide di S.Giovanni in Oleo</title>
+    <location>external</location>
+    <coord>
+        <yaw></yaw>
+        <pitch></pitch>
+    </coord>
+  </work>
+  <work>
+    <id>pozzo</id>
+    <title>Pozzo Latino</title>
+    <location>external</location>
+    <coord>
+        <yaw></yaw>
+        <pitch></pitch>
     </coord>
   </work>
 </works>

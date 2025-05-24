@@ -33,6 +33,9 @@ onMounted(async () => {
     const id = node.getElementsByTagName('id')[0]?.textContent || ''
     if (id === route.params.id) {
       const title = node.getElementsByTagName('title')[0]?.textContent || ''
+      const description = node.getElementsByTagName('description')[0]?.textContent || ''
+      const location = node.getElementsByTagName('location')[0]?.textContent || ''
+      const year = parseInt(node.getElementsByTagName('year')[0]?.textContent || '0')
       const coord = node.getElementsByTagName('coord')[0]
       const yaw = parseFloat(coord?.getElementsByTagName('yaw')[0]?.textContent || 0)
       const pitch = parseFloat(coord?.getElementsByTagName('pitch')[0]?.textContent || 0)
