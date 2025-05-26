@@ -9,9 +9,14 @@
           :alt="work.title"
           style="width: 100%; height: auto; border-radius: 0.5rem"
         />
-        <h4 style="margin-top: 0.5rem">
-          <a :href="`/opera/${work.id}`">{{ work.title }}</a>
-        </h4>
+        <div style="margin-top: 0.5rem">
+          <h4 style="margin: 0">
+            <a :href="`/opera/${work.id}`">{{ work.title }}</a>
+          </h4>
+          <p v-if="work.subtitle" style="color: grey; margin: 0.25rem 0 0">
+            {{ work.subtitle }}
+          </p>
+        </div>
       </article>
     </div>
   </div>
@@ -23,9 +28,12 @@ import { ref, onMounted, computed } from 'vue'
 const works = ref([])
 const search = ref('')
 
-onMounted(async () => {
-  const res = await fetch('http://localhost:8000/api/works.php?action=list')
-  works.value = await res.json()
+onMounted(() => {
+  fetch('http://localhost:8000/api/works.php?action=list')
+    .then((res) => res.json())
+    .then((data) => {
+      works.value = data
+    })
 })
 
 const filteredWorks = computed(() =>

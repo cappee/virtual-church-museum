@@ -9,10 +9,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'tour',
       component: HomeView,
     },
-    { path: '/opera/:id', component: WorkView, props: true },
+    { name: 'opera', path: '/opera/:id', component: WorkView, props: true },
     { path: '/museum', component: GalleryView },
     { path: '/about', component: AboutView },
   ],

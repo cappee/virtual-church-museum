@@ -21,6 +21,7 @@ switch ($action) {
                 //'image' => (string) "http://localhost:8000/data/photos/monalisa.png",
                 'image' => "http://localhost:8000/data/photos/" . (string) $work->id . ".jpeg",
                 'title' => (string) $work->title,
+                'subtitle' => (string) $work->subtitle,
                 'description' => isset($work->description) ? (string) $work->description : null,
                 'year' => (int) $work->year,
                 'location' => (string) $work->location,

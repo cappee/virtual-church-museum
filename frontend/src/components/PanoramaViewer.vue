@@ -10,8 +10,8 @@ import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin'
 import '@photo-sphere-viewer/core/index.css'
 import '@photo-sphere-viewer/markers-plugin/index.css'
 import interior from '@/assets/skybox_interior.jpg'
-import coffee from '@/assets/coffee.jpg'
-import painting from '@/assets/google_maps_pin_PNG76.png'
+import exterior from '@/assets/skybox_exterior.jpg'
+import pin from '@/assets/google_maps_pin_PNG76.png'
 
 const router = useRouter()
 const panoramaViewer = ref(null)
@@ -21,13 +21,33 @@ const props = defineProps<{
 }>()
 
 let viewer: Viewer | null = null
+let markersPlugin: MarkersPlugin | null = null
+let allWorks: any[] = []
 
 const photoMap = {
-  interior: interior,
-  exterior: coffee,
+  interior,
+  exterior,
 }
 
-onMounted(async () => {
+function updateMarkers(photo: 'interior' | 'exterior') {
+  if (!markersPlugin) return
+  markersPlugin.clearMarkers()
+
+  const filtered = allWorks.filter((work) => work.location === photo)
+
+  for (const work of filtered) {
+    markersPlugin.addMarker({
+      id: work.id,
+      position: { yaw: work.yaw, pitch: work.pitch },
+      tooltip: work.title,
+      image: pin,
+      size: { width: 32, height: 32 },
+      anchor: 'bottom center',
+    })
+  }
+}
+
+onMounted(() => {
   viewer = new Viewer({
     container: panoramaViewer.value!,
     panorama: photoMap[props.photo],
@@ -37,7 +57,7 @@ onMounted(async () => {
     plugins: [MarkersPlugin],
   })
 
-  const markersPlugin = viewer.getPlugin(MarkersPlugin) as MarkersPlugin
+  markersPlugin = viewer.getPlugin(MarkersPlugin) as MarkersPlugin
 
   fetch('http://localhost:8000/api/works.php')
     .then((res) => res.text())
@@ -45,33 +65,31 @@ onMounted(async () => {
       const parser = new DOMParser()
       const xmlDoc = parser.parseFromString(xmlText, 'text/xml')
 
-      const works = [...xmlDoc.getElementsByTagName('work')]
+      allWorks = [...xmlDoc.getElementsByTagName('work')].map((work) => {
+        const id = work.getElementsByTagName('id')[0]?.textContent || ''
+        const title = work.getElementsByTagName('title')[0]?.textContent || ''
+        const location = work.getElementsByTagName('location')[0]?.textContent || 'interior'
+        const yaw = parseFloat(
+          work.getElementsByTagName('coord')[0].getElementsByTagName('yaw')[0]?.textContent || '0',
+        )
+        const pitch = parseFloat(
+          work.getElementsByTagName('coord')[0].getElementsByTagName('pitch')[0]?.textContent ||
+            '0',
+        )
 
-      for (const work of works) {
-        const id = work.getElementsByTagName('id')[0]?.textContent
-        const title = work.getElementsByTagName('title')[0]?.textContent
-        const coord = work.getElementsByTagName('coord')[0]
-        const yaw = parseFloat(coord.getElementsByTagName('yaw')[0]?.textContent!)
-        const pitch = parseFloat(coord.getElementsByTagName('pitch')[0]?.textContent!)
+        return { id, title, location, yaw, pitch }
+      })
 
-        markersPlugin.addMarker({
-          id: `${id}`,
-          position: { yaw, pitch },
-          tooltip: title!,
-          image: painting,
-          size: { width: 32, height: 32 },
-          anchor: 'bottom center',
-        })
-      }
+      updateMarkers(props.photo)
     })
 
   viewer.addEventListener('click', ({ data }) => {
     const { yaw, pitch } = data
-    markersPlugin.addMarker({
+    markersPlugin?.addMarker({
       id: `marker-${Date.now()}`,
       position: { yaw, pitch },
       tooltip: `yaw: ${yaw.toFixed(2)}, pitch: ${pitch.toFixed(2)}`,
-      image: painting,
+      image: pin,
       size: { width: 32, height: 32 },
       anchor: 'bottom center',
     })
@@ -87,6 +105,7 @@ watch(
   (newPhoto) => {
     if (viewer) {
       viewer.setPanorama(photoMap[newPhoto])
+      updateMarkers(newPhoto)
     }
   },
 )

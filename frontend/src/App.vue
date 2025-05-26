@@ -6,7 +6,7 @@ import { Globe, Amphora, LibraryBig } from 'lucide-vue-next'
 const route = useRoute()
 
 const isTour = computed(() => route.path === '/')
-const isMuseum = computed(() => route.path === '/museum')
+const isMuseum = computed(() => route.path === '/museum' || route.name === 'opera')
 const isAbout = computed(() => route.path === '/about')
 
 const selectedPhoto = ref('interior')
