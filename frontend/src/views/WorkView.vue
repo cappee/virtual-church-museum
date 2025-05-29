@@ -31,6 +31,7 @@
         ></textarea>
         <button
           type="submit"
+          :disabled="isLoading"
           style="
             margin-top: 1rem;
             background-color: #28a745;
@@ -40,7 +41,7 @@
             border-radius: 5px;
           "
         >
-          Chiedi all'intelligenza artificiale
+          {{ isLoading ? 'Attendere...' : "Chiedi all'intelligenza artificiale" }}
         </button>
       </form>
       <div
@@ -83,4 +84,71 @@ onMounted(() => {
       }
     })
 })
+
+const question = ref('')
+const aiResponse = ref('')
+const isLoading = ref(false)
+
+function askAI() {
+  aiResponse.value = ''
+  isLoading.value = true
+
+  fetch('http://localhost:8000/api/question.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      question: question.value,
+      id: route.params.id,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const fullPrompt = data.prompt
+      return fetch('http://localhost:11434/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'gemma3:1b-it-q4_K_M',
+          prompt: fullPrompt,
+          stream: true,
+        }),
+      })
+    })
+    .then((response) => {
+      const reader = response.body.getReader()
+      const decoder = new TextDecoder()
+
+      function readChunk() {
+        return reader.read().then(({ done, value }) => {
+          if (done) {
+            isLoading.value = false
+            return
+          }
+
+          const chunk = decoder.decode(value, { stream: true })
+          const lines = chunk.split('\n').filter((line) => line.trim() !== '')
+
+          lines.forEach((line) => {
+            try {
+              const data = JSON.parse(line)
+              if (data.response) {
+                aiResponse.value += data.response
+              }
+            } catch (e) {
+              console.warn('Errore parsing JSON:', line)
+            }
+          })
+
+          return readChunk()
+        })
+      }
+
+      return readChunk()
+    })
+    .catch((error) => {
+      isLoading.value = false
+      aiResponse.value = 'Errore: ' + error.message
+      console.error('Errore durante la richiesta:', error)
+    })
+}
 </script>
