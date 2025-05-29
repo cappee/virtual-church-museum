@@ -156,9 +156,12 @@
 	<work>
 		<id>lastramarmo</id>
 		<title>Leggio</title>
-		<description>Di fronte all'altare della Basilica di San Giovanni a Porta Latina si trova una lastra di marmo di particolare interesse storico e artistico. Questa lastra è un frammento di pluteo preromanico del IX secolo, decorato con un motivo centrale ad arbusto da cui si dipartono tralci che formano una serie di volute. Questo elemento è stato riutilizzato come paliotto dell'altare moderno, evidenziando la pratica del reimpiego di materiali antichi in epoche successive.</description>
+		<description>Di fronte all'altare della Basilica di San Giovanni a Porta Latina si trova una lastra di marmo di particolare interesse storico e artistico. 
+			Questa lastra è un frammento di pluteo preromanico del IX secolo, decorato con un motivo centrale ad arbusto da cui si dipartono tralci che formano una serie di volute. 
+			Questo elemento è stato riutilizzato come paliotto dell'altare moderno, evidenziando la pratica del reimpiego di materiali antichi in epoche successive.
+			è inserita un'epigrafe che reca l'antico "titolo" della chiesa: «	TIT. S. IOANNIS ANTE PORIAM LA[tinam]. »
+		</description>
 		<year>1191</year>
-		<description>è inserita un'epigrafe che reca l'antico "titolo" della chiesa: «	TIT. S. IOANNIS ANTE PORIAM LA[tinam]. »</description>
 		<location>interior</location>
 		<coord>
 			<yaw>0.30</yaw>
@@ -172,43 +175,25 @@
 		<description>La storia della Genesi raccontata negli affreschi della Basilica di San Giovanni a Porta Latina si sviluppa lungo le pareti della navata centrale, in un grande ciclo pittorico risalente alla fine del XII secolo. Questi affreschi costituiscono una delle testimonianze più significative della pittura romanica a Roma e servivano a educare visivamente i fedeli attraverso le Sacre Scritture.
 			Sulle pareti laterali, le Storie della Genesi sono narrate in ordine cronologico attraverso una serie di riquadri, divisi su tre registri sovrapposti:
 			Sulla parete destra: 
-
 				Separazione della luce dalle tenebre;
-
 				Creazione del firmamento, delle stelle, del sole e della luna;
-
 				Creazione di Adamo ed Eva;
-
 				Il comando di Dio di non mangiare il frutto;
-
 				Tentazione di Eva e Peccato Originale;
-
 				Cacciata dal Paradiso;
-
 				Lavoro e vita dopo il peccato;
-
 				Sacrificio di Caino e Abele;
-
 				Omicidio di Abele;
-
 			Sulla parete sinistra:
 				Noè costruisce l’arca;
-
 				Il Diluvio Universale;
-
 				Noè e la sua famiglia si salvano;
-
 				Alleanza con Dio e l’arcobaleno;
-
 				Storia di Abramo: visita dei tre angeli;
-
 				Sogno di Giuseppe;
-
 			Questo ciclo mette in evidenza il rapporto tra l’uomo e Dio, la disobbedienza e le sue conseguenze, ma anche la misericordia divina e la speranza di salvezza.
-
 			Giudizio Universale:
 				Il racconto termina sulla controfacciata, con una rappresentazione del Giudizio Universale, dove Cristo giudica l’umanità, sottolineando il senso morale e salvifico dell’intera narrazione biblica.
-
 				Insieme, questi affreschi non solo decorano, ma insegnano, costruendo un percorso spirituale dalle origini dell’uomo al destino eterno.</description>
 		<year>1191</year>
 		<location>interior</location>
@@ -261,7 +246,7 @@
 	</work>
 	<work>
 		<id>scrittalatina</id>
-		<title>Icrizione Latina</title>
+		<title>Iscrizione Latina</title>
 		<description>Sotto il portico della Basilica di San Giovanni a Porta Latina, sulla sinistra, è presente una lastra di marmo con un'iscrizione in latino. Questa lastra è un frammento di epigrafe romana, parte di una raccolta di reperti antichi e medievali collocati nel portico della basilica. Il portico stesso ospita diverse lastre paleocristiane, lapidi e frammenti romani, tra cui un frammento marmoreo raffigurante Apollo ed Ercole in lotta e altre lastre romane infisse sulla base del campanile.</description>
 		<location>exterior</location>
 		<coord>

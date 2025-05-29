@@ -75,7 +75,7 @@ onMounted(() => {
         work.value = {
           title: found.title || '',
           description: found.description || '',
-          year: parseInt(found.year || '0'),
+          year: found.year && found.year.trim() ? found.year : 'non conosciuto',
           image: found.image || '',
           yaw: parseFloat(found.yaw || '0'),
           pitch: parseFloat(found.pitch || '0'),

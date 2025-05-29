@@ -17,13 +17,11 @@ switch ($action) {
         foreach ($xml->work as $work) {
             $works[] = [
                 'id' => (string) $work->id,
-                //'image' => (string) "http://localhost:8000/data/photos/" . (string) $work->id,
-                //'image' => (string) "http://localhost:8000/data/photos/monalisa.png",
                 'image' => "http://localhost:8000/data/photos/" . (string) $work->id . ".jpeg",
                 'title' => (string) $work->title,
                 'subtitle' => (string) $work->subtitle,
                 'description' => isset($work->description) ? (string) $work->description : null,
-                'year' => (int) $work->year,
+                'year' => !empty($work->year) ? (string) $work->year : 'non conosciuto',
                 'location' => (string) $work->location,
                 'yaw' => (float) $work->coord->yaw,
                 'pitch' => (float) $work->coord->pitch,
