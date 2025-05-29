@@ -156,6 +156,7 @@
 	<work>
 		<id>lastramarmo</id>
 		<title>Leggio</title>
+		<description>Di fronte all'altare della Basilica di San Giovanni a Porta Latina si trova una lastra di marmo di particolare interesse storico e artistico. Questa lastra è un frammento di pluteo preromanico del IX secolo, decorato con un motivo centrale ad arbusto da cui si dipartono tralci che formano una serie di volute. Questo elemento è stato riutilizzato come paliotto dell'altare moderno, evidenziando la pratica del reimpiego di materiali antichi in epoche successive.</description>
 		<year>1191</year>
 		<description>è inserita un'epigrafe che reca l'antico "titolo" della chiesa: «	TIT. S. IOANNIS ANTE PORIAM LA[tinam]. »</description>
 		<location>interior</location>
@@ -165,8 +166,50 @@
 		</coord>
 	</work>
 	<work>
-		<id>affresco1</id>
+		<id>affreschilaterali</id>
 		<title>Storie della Genesi e Giudizio Universale</title>
+		<subtitle>gli affreschi ruotano intorno alla navata centrale</subtitle>
+		<description>La storia della Genesi raccontata negli affreschi della Basilica di San Giovanni a Porta Latina si sviluppa lungo le pareti della navata centrale, in un grande ciclo pittorico risalente alla fine del XII secolo. Questi affreschi costituiscono una delle testimonianze più significative della pittura romanica a Roma e servivano a educare visivamente i fedeli attraverso le Sacre Scritture.
+			Sulle pareti laterali, le Storie della Genesi sono narrate in ordine cronologico attraverso una serie di riquadri, divisi su tre registri sovrapposti:
+			Sulla parete destra: 
+
+				Separazione della luce dalle tenebre;
+
+				Creazione del firmamento, delle stelle, del sole e della luna;
+
+				Creazione di Adamo ed Eva;
+
+				Il comando di Dio di non mangiare il frutto;
+
+				Tentazione di Eva e Peccato Originale;
+
+				Cacciata dal Paradiso;
+
+				Lavoro e vita dopo il peccato;
+
+				Sacrificio di Caino e Abele;
+
+				Omicidio di Abele;
+
+			Sulla parete sinistra:
+				Noè costruisce l’arca;
+
+				Il Diluvio Universale;
+
+				Noè e la sua famiglia si salvano;
+
+				Alleanza con Dio e l’arcobaleno;
+
+				Storia di Abramo: visita dei tre angeli;
+
+				Sogno di Giuseppe;
+
+			Questo ciclo mette in evidenza il rapporto tra l’uomo e Dio, la disobbedienza e le sue conseguenze, ma anche la misericordia divina e la speranza di salvezza.
+
+			Giudizio Universale:
+				Il racconto termina sulla controfacciata, con una rappresentazione del Giudizio Universale, dove Cristo giudica l’umanità, sottolineando il senso morale e salvifico dell’intera narrazione biblica.
+
+				Insieme, questi affreschi non solo decorano, ma insegnano, costruendo un percorso spirituale dalle origini dell’uomo al destino eterno.</description>
 		<year>1191</year>
 		<location>interior</location>
 		<coord>
@@ -177,19 +220,53 @@
 	<work>
 		<id>cuspide</id>
 		<title>Cuspide di S.Giovanni in Oleo</title>
+		<description>La cuspide del tempietto di San Giovanni in Oleo, situato accanto alla Basilica di San Giovanni a Porta Latina a Roma, è un elemento architettonico di grande valore storico e simbolico. La cuspide realizzata da Borromini consisteva in un attico circolare sovrapposto al tamburo, decorato con un fregio a rose, palmette e gigli, sormontato da un globo con rose e una croce, simboli legati al committente. Questo elemento conferiva al tempietto un aspetto slanciato e ricco di significati religiosi e araldici. Rappresenta un esempio significativo dell'intervento di Borromini nell'architettura religiosa romana del XVII secolo, unendo elementi decorativi e simbolici in una composizione armoniosa.</description>
 		<location>exterior</location>
 		<coord>
-			<yaw>0</yaw>
+			<yaw>0.49</yaw>
 			<pitch>0</pitch>
 		</coord>
 	</work>
 	<work>
 		<id>pozzo</id>
 		<title>Pozzo Latino</title>
+		<subtitle>margella</subtitle>
+		<description>Il pozzo situato nel cortile antistante la Basilica di San Giovanni a Porta Latina è un notevole esempio di arte e spiritualità medievale. Risalente al IX secolo, questo pozzo è fiancheggiato da due colonne con capitelli a foglie del IV secolo, testimonianza del riutilizzo di elementi architettonici antichi. La parte superiore del pozzo, chiamata margella, è decorata con motivi vegetali a rilievo, tipici dell'ornamentazione altomedievale. Intorno all'imboccatura del pozzo è incisa una significativa iscrizione latina: "IN NOMINE PAT[RIS] ET FILII ET SPI[RITUS SANT]I. OMN[E]S SITIE[NTES VENITE AD AQUAS]. EGO STEFANUS." tradotta: "Nel nome del Padre, del Figlio e dello Spirito Santo. Venite alle acque, voi tutti che siete assetati. Io, Stefano."</description>
 		<location>exterior</location>
 		<coord>
-			<yaw>1</yaw>
-			<pitch>1</pitch>
+			<yaw>4.91</yaw>
+			<pitch>-0.18</pitch>
+		</coord>
+	</work>
+	<work>
+		<id>catinoabsidale</id>
+		<title>Catino Absidale</title>
+		<subtitle>San Giovanni Evangelista trascinato in giudizio</subtitle>
+		<description>L'affresco situato nel catino absidale della Basilica di San Giovanni a Porta Latina a Roma è un'opera significativa sia dal punto di vista artistico che storico. Realizzato nel 1715 dal pittore Antonio Rapreti, l'affresco raffigura San Giovanni Evangelista trascinato in giudizio davanti all'imperatore Domiziano, un episodio legato alla tradizione del martirio mancato dell'apostolo. L'opera fu eseguita sulla base di cartoni preparatori lasciati da Giuseppe Cesari, noto come il Cavalier d'Arpino, uno dei principali artisti del tardo manierismo romano.</description>
+		<location>interior</location>
+		<coord>
+			<yaw>0.66</yaw>
+			<pitch>0.24</pitch>
+		</coord>
+	</work>
+	<work>
+		<id>volto</id>
+		<title>Volto Affrescato</title>
+		<description>In alto a sinistra del portico della basilica, si conserva un antico affresco raffigurante un volto stilizzato, probabilmente risalente all’XI-XII secolo. I tratti semplici e circolari fanno pensare a una figura simbolica, forse Cristo Pantocratore o un angelo, collocata in alto come immagine benedicente. Oggi è visibile dietro una rete protettiva e rappresenta una rara testimonianza delle decorazioni pittoriche originarie della chiesa.</description>
+		<location>exterior</location>
+		<coord>
+			<yaw>6.06</yaw>
+			<pitch>0.37</pitch>
+		</coord>
+	</work>
+	<work>
+		<id>scrittalatina</id>
+		<title>Icrizione Latina</title>
+		<description>Sotto il portico della Basilica di San Giovanni a Porta Latina, sulla sinistra, è presente una lastra di marmo con un'iscrizione in latino. Questa lastra è un frammento di epigrafe romana, parte di una raccolta di reperti antichi e medievali collocati nel portico della basilica. Il portico stesso ospita diverse lastre paleocristiane, lapidi e frammenti romani, tra cui un frammento marmoreo raffigurante Apollo ed Ercole in lotta e altre lastre romane infisse sulla base del campanile.</description>
+		<location>exterior</location>
+		<coord>
+			<yaw>5.52</yaw>
+			<pitch>-0.03</pitch>
 		</coord>
 	</work>
 </works>
