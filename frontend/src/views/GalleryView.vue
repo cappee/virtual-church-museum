@@ -5,9 +5,9 @@
     <div class="grid" style="margin-top: 1rem">
       <article v-for="work in filteredWorks" :key="work.title">
         <img
-          :src="work.image"
+          :src="work.images[0]"
           :alt="work.title"
-          style="width: 100%; height: auto; border-radius: 0.5rem"
+          style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem"
         />
         <div style="margin-top: 0.5rem">
           <h4 style="margin: 0">

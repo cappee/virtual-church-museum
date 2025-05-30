@@ -1,18 +1,24 @@
 <template>
   <main class="container" style="margin-top: 2rem; max-width: 900px; margin-inline: auto">
-    <div v-if="work" style="display: flex; gap: 2rem; flex-wrap: wrap">
-      <div style="flex: 1 1 300px">
-        <h1 style="font-size: 2rem; margin-bottom: 1rem">{{ work.title }}</h1>
-        <p>{{ work.description }}</p>
-        <p><strong>Anno:</strong> {{ work.year }}</p>
+    <div v-if="work" style="display: flex; flex-direction: column; gap: 2rem">
+      <!-- Riga con immagine a sinistra e anno + titolo a destra -->
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start">
+        <div style="flex: 1 1 300px">
+          <h1 style="font-size: 2rem; margin: 0">{{ work.title }}</h1>
+          <p style="margin: 0 0 0.5rem 0"><strong>Anno:</strong> {{ work.year }}</p>
+        </div>
+
+        <!-- Immagine -->
+        <div style="flex: 0 0 300px; display: flex; justify-content: center">
+          <ImageCarousel :images="work.images" />
+        </div>
+
+        <!-- Anno + Titolo -->
       </div>
 
-      <div style="flex: 1 1 300px; display: flex; justify-content: center">
-        <img
-          :src="work.image"
-          alt="Immagine dell'opera"
-          style="max-width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover"
-        />
+      <!-- Descrizione sotto -->
+      <div>
+        <p style="margin-top: 0">{{ work.description }}</p>
       </div>
     </div>
 
@@ -45,16 +51,19 @@
         </button>
       </form>
       <div
-        v-if="aiResponse"
         style="
           margin-top: 1.5rem;
           background-color: #f8f9fa;
           padding: 1rem;
           border-radius: 6px;
           border: 1px solid #ddd;
+          min-height: 120px;
+          white-space: pre-wrap;
         "
       >
-        <p><strong>Risposta:</strong> {{ aiResponse }}</p>
+        <p><strong>Risposta:</strong></p>
+        <p v-if="aiResponse">{{ aiResponse }}</p>
+        <p v-else style="opacity: 0">Spazio riservato alla risposta</p>
       </div>
     </section>
   </main>
@@ -62,6 +71,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import ImageCarousel from '@/components/ImageCarousel.vue'
 
 const route = useRoute()
 const work = ref(null)
@@ -72,15 +82,8 @@ onMounted(() => {
     .then((allWorks) => {
       const found = allWorks.find((work) => work.id === route.params.id)
       if (found) {
-        work.value = {
-          title: found.title || '',
-          description: found.description || '',
-          year: found.year && found.year.trim() ? found.year : 'non conosciuto',
-          image: found.image || '',
-          yaw: parseFloat(found.yaw || '0'),
-          pitch: parseFloat(found.pitch || '0'),
-          location: found.location || '',
-        }
+        console.log('Opera trovata:', found)
+        work.value = found
       }
     })
 })
@@ -132,7 +135,8 @@ function askAI() {
             try {
               const data = JSON.parse(line)
               if (data.response) {
-                aiResponse.value += data.response
+                const cleaned = data.response.replace(/\*/g, '')
+                aiResponse.value += cleaned
               }
             } catch (e) {
               console.warn('Errore parsing JSON:', line)
