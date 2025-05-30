@@ -18,7 +18,7 @@ const selectedPhoto = ref('interior')
       <nav>
         <ul>
           <li class="title">Basilica di San Giovanni in Porta Latina</li>
-          <li v-if="isTour">
+          <li class="select-container" v-if="isTour">
             <select v-model="selectedPhoto">
               <option value="interior">Interno</option>
               <option value="exterior">Esterno</option>
@@ -27,16 +27,18 @@ const selectedPhoto = ref('interior')
         </ul>
         <ul>
           <li>
-            <a href="/" :class="{ active: isTour }"><Globe class="icon"></Globe>Tour</a>
+            <a href="/" :class="{ active: isTour }"
+              ><Globe class="icon"></Globe><span class="nav-text">Tour 360°</span></a
+            >
           </li>
           <li>
             <a href="/museum" :class="{ active: isMuseum }"
-              ><Amphora class="icon"></Amphora>Opere</a
+              ><Amphora class="icon"></Amphora><span class="nav-text">Opere</span></a
             >
           </li>
           <li>
             <a href="/about" :class="{ active: isAbout }"
-              ><LibraryBig class="icon"></LibraryBig>Storia</a
+              ><LibraryBig class="icon"></LibraryBig><span class="nav-text">Storia</span></a
             >
           </li>
         </ul>
@@ -101,5 +103,20 @@ a.active {
 
 a:hover {
   text-decoration: none !important;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 0.9rem;
+  }
+  .nav-text {
+    display: none;
+  }
+  header select {
+    font-size: 0.8rem;
+  }
+  .select-container {
+    width: 100%;
+  }
 }
 </style>

@@ -53,7 +53,7 @@ onMounted(() => {
     panorama: photoMap[props.photo],
     navbar: false,
     mousewheel: false,
-    touchmoveTwoFingers: true,
+    touchmoveTwoFingers: false,
     plugins: [MarkersPlugin],
   })
 
@@ -83,7 +83,8 @@ onMounted(() => {
       updateMarkers(props.photo)
     })
 
-  viewer.addEventListener('click', ({ data }) => {
+  // Serviva per sapere le coordinate dove aggiungere un marker
+  /*viewer.addEventListener('click', ({ data }) => {
     const { yaw, pitch } = data
     markersPlugin?.addMarker({
       id: `marker-${Date.now()}`,
@@ -93,7 +94,7 @@ onMounted(() => {
       size: { width: 32, height: 32 },
       anchor: 'bottom center',
     })
-  })
+  })*/
 
   markersPlugin.addEventListener('select-marker', ({ marker }) => {
     router.push(`/opera/${encodeURIComponent(marker.id)}`)
