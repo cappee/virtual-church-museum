@@ -1,19 +1,15 @@
 <template>
-  <div class="container" style="margin-top: 2rem">
+  <div class="container">
     <input type="search" v-model="search" placeholder="Cerca un'opera" />
 
-    <div class="grid" style="margin-top: 1rem">
+    <div class="grid">
       <article v-for="work in filteredWorks" :key="work.title">
-        <img
-          :src="work.images[0]"
-          :alt="work.title"
-          style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem"
-        />
-        <div style="margin-top: 0.5rem">
-          <h4 style="margin: 0">
+        <img :src="work.images[0]" :alt="work.title" class="work-image" loading="lazy" />
+        <div class="work-info">
+          <h4 class="work-title">
             <a :href="`/opera/${work.id}`">{{ work.title }}</a>
           </h4>
-          <p v-if="work.subtitle" style="color: grey; margin: 0.25rem 0 0">
+          <p v-if="work.subtitle" class="work-subtitle">
             {{ work.subtitle }}
           </p>
         </div>
@@ -42,6 +38,10 @@ const filteredWorks = computed(() =>
 </script>
 
 <style scoped>
+.container {
+  margin-top: 2rem;
+}
+
 .search-bar {
   display: block;
   margin: 2rem auto;
@@ -52,6 +52,27 @@ const filteredWorks = computed(() =>
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.work-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.work-info {
+  margin-top: 0.5rem;
+}
+
+.work-title {
+  margin: 0;
+}
+
+.work-subtitle {
+  color: grey;
+  margin: 0.25rem 0 0;
 }
 
 article {

@@ -40,7 +40,7 @@ switch ($action) {
                 'title' => (string) $work->title,
                 'subtitle' => (string) $work->subtitle,
                 'description' => isset($work->description) ? (string) $work->description : null,
-                'year' => (int) $work->year,
+                'year' => !empty($work->year) ? (string) $work->year : 'non conosciuto',
                 'location' => (string) $work->location,
                 'yaw' => (float) $work->coord->yaw,
                 'pitch' => (float) $work->coord->pitch,

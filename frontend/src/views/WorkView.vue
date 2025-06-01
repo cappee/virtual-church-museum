@@ -1,7 +1,6 @@
 <template>
   <main class="container" style="margin-top: 2rem; max-width: 900px; margin-inline: auto">
     <div v-if="work" style="display: flex; flex-direction: column; gap: 2rem">
-      <!-- Riga con immagine a sinistra e anno + titolo a destra -->
       <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start">
         <div style="flex: 1 1 300px">
           <h1 style="font-size: 2rem; margin: 0">{{ work.title }}</h1>
@@ -16,7 +15,6 @@
         <!-- Anno + Titolo -->
       </div>
 
-      <!-- Descrizione sotto -->
       <div>
         <p style="margin-top: 0">{{ work.description }}</p>
       </div>

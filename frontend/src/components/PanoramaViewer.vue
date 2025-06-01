@@ -2,13 +2,15 @@
   <div ref="panoramaViewer" class="viewer"></div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { Viewer } from '@photo-sphere-viewer/core'
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin'
 import '@photo-sphere-viewer/core/index.css'
 import '@photo-sphere-viewer/markers-plugin/index.css'
+
+// Importa le immagini per lo sphere viewer
 import interior from '@/assets/skybox_interior.jpg'
 import exterior from '@/assets/skybox_exterior.jpg'
 import pin from '@/assets/google_maps_pin_PNG76.png'
@@ -16,20 +18,20 @@ import pin from '@/assets/google_maps_pin_PNG76.png'
 const router = useRouter()
 const panoramaViewer = ref(null)
 
-const props = defineProps<{
-  photo: 'interior' | 'exterior'
-}>()
+const props = defineProps({
+  photo: 'interior' | 'exterior',
+})
 
-let viewer: Viewer | null = null
-let markersPlugin: MarkersPlugin | null = null
-let allWorks: any[] = []
+let viewer = null
+let markersPlugin = null
+let allWorks = []
 
 const photoMap = {
   interior,
   exterior,
 }
 
-function updateMarkers(photo: 'interior' | 'exterior') {
+function updateMarkers(photo) {
   if (!markersPlugin) return
   markersPlugin.clearMarkers()
 
@@ -49,7 +51,7 @@ function updateMarkers(photo: 'interior' | 'exterior') {
 
 onMounted(() => {
   viewer = new Viewer({
-    container: panoramaViewer.value!,
+    container: panoramaViewer.value,
     panorama: photoMap[props.photo],
     navbar: false,
     mousewheel: false,
@@ -57,7 +59,7 @@ onMounted(() => {
     plugins: [MarkersPlugin],
   })
 
-  markersPlugin = viewer.getPlugin(MarkersPlugin) as MarkersPlugin
+  markersPlugin = viewer.getPlugin(MarkersPlugin)
 
   fetch('http://localhost:8000/api/works.php')
     .then((res) => res.text())
@@ -101,6 +103,7 @@ onMounted(() => {
   })
 })
 
+// Rimane in ascolto del cambiamento della foto
 watch(
   () => props.photo,
   (newPhoto) => {

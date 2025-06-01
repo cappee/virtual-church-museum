@@ -5,6 +5,7 @@ import { Globe, Amphora, LibraryBig } from 'lucide-vue-next'
 
 const route = useRoute()
 
+// Con queste variabili possiamo determintare quale pagina è attualmente attiva
 const isTour = computed(() => route.path === '/')
 const isMuseum = computed(() => route.path === '/museum' || route.name === 'opera')
 const isAbout = computed(() => route.path === '/about')
@@ -106,6 +107,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  /* Stile per visualizzazione da cellulare */
   .title {
     font-size: 0.9rem;
   }

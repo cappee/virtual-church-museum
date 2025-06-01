@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import PanoramaViewer from '@/components/PanoramaViewer.vue'
 
-defineProps<{
-  photo: 'interior' | 'exterior'
-}>()
+defineProps({
+  photo: 'interior' | 'exterior',
+})
 </script>
 
 <template>

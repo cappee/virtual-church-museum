@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const images = ref([])
 
@@ -88,6 +88,7 @@ onMounted(() => {
       images.value = data
     })
 
+  // Avvia il carosello automatico, aggiornando l'indice corrente ogni 3 secondi
   setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % images.value.length
   }, 3000)
@@ -99,7 +100,7 @@ onMounted(() => {
   width: 100%;
   margin: auto;
   overflow: hidden;
-  padding: 10px; /* spazio intorno al carosello */
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -113,17 +114,16 @@ onMounted(() => {
   display: flex;
   justify-content: center; /* centra orizzontalmente */
   align-items: center; /* centra verticalmente */
-  padding: 10px; /* spazio interno, crea i bordi visivi */
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .carousel-slide img {
-  max-width: 90%; /* lascia margine a sinistra e destra */
-  max-height: 300px; /* o altra altezza massima */
-  object-fit: contain; /* mantiene le proporzioni e non taglia l'immagine */
+  max-width: 90%;
+  max-height: 300px;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  background: #fff; /* sfondo bianco per foto verticali con spazio laterale */
 }
 
 .text-section h2 {
